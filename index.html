@@ -33,13 +33,13 @@
 <body>
     <h1>Los Hombres Lobo de Castronegro</h1>
     <h2>Evento aleatorio</h2>
-    <img id="carta" src="Eventos/trasera.jpg" alt="Carta de evento">
+    <img id="carta" src="Eventos/Trasera.jpg" alt="Carta de evento">
     <br>
     <button id="sacarCarta" onclick="sacarCarta()">Sacar carta de evento</button>
     <button id="reiniciar" onclick="reiniciarJuego()" style="display:none;">REINICIAR</button>
 
     <script>
-        let cartas = Array.from({length: 36}, (_, i) => `eventos/${(i+1).toString().padStart(2, '0')}.jpg`);
+        let cartas = Array.from({length: 36}, (_, i) => `Eventos/${(i+1).toString().padStart(2, '0')}.jpg`);
         let mazo = [...cartas];
 
         function sacarCarta() {
