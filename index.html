@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Hombres Lobo de Castronegro - Evento</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #282828;
+            color: white;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #d32f2f;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Los Hombres Lobo de Castronegro</h1>
+    <h2>Evento aleatorio</h2>
+    <img id="carta" src="eventos/trasera.jpg" alt="Carta de evento">
+    <br>
+    <button id="sacarCarta" onclick="sacarCarta()">Sacar carta de evento</button>
+    <button id="reiniciar" onclick="reiniciarJuego()" style="display:none;">REINICIAR</button>
+
+    <script>
+        let cartas = Array.from({length: 36}, (_, i) => `eventos/${(i+1).toString().padStart(2, '0')}.jpg`);
+        let mazo = [...cartas];
+
+        function sacarCarta() {
+            if (mazo.length === 0) {
+                document.getElementById('carta').src = '';
+                document.getElementById('carta').alt = 'SE HA ACABADO EL MAZO';
+                document.getElementById('sacarCarta').style.display = 'none';
+                document.getElementById('reiniciar').style.display = 'inline-block';
+                return;
+            }
+            
+            let indice = Math.floor(Math.random() * mazo.length);
+            let cartaSeleccionada = mazo.splice(indice, 1)[0];
+            document.getElementById('carta').src = cartaSeleccionada;
+        }
+
+        function reiniciarJuego() {
+            mazo = [...cartas];
+            document.getElementById('carta').src = 'eventos/trasera.jpg';
+            document.getElementById('carta').alt = 'Carta de evento';
+            document.getElementById('sacarCarta').style.display = 'inline-block';
+            document.getElementById('reiniciar').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
