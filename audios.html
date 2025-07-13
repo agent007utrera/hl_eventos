@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Audios Mystery in the Box</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #111;
+      color: #f5f5f5;
+      padding: 2em;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e63946;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 2em auto;
+    }
+
+    li {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f1fa8c;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #player-container {
+      text-align: center;
+      margin-top: 3em;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Audios Mystery in the Box</h1>
+
+  <ul>
+    <li><a onclick="playAudio('mansion.mp3')">Asesinato en la Mansión Cthulhu</a></li>
+    <li><a onclick="playAudio('lobos.mp3')">El cuento de los lobos crepusculares</a></li>
+    <li><a onclick="playAudio('bruja1.mp3')">La bruja que se fue con el crepúsculo (1)</a></li>
+    <li><a onclick="playAudio('bruja2.mp3')">La bruja que se fue con el crepúsculo (2)</a></li>
+    <li><a onclick="playAudio('luna.mp3')">Bajo la luna azul</a></li>
+    <li><a onclick="playAudio('muertos.mp3')">El misterio de los muertos vivientes</a></li>
+    <li><a onclick="playAudio('solsticio.mp3')">Solsticio oscuro</a></li>
+  </ul>
+
+  <div id="player-container">
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+
+  <script>
+    function playAudio(filename) {
+      const player = document.getElementById("audioPlayer");
+      const source = document.getElementById("audioSource");
+      source.src = "audios/" + filename;
+      player.load();
+      player.play();
+    }
+  </script>
+</body>
+</html>
