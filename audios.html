@@ -51,21 +51,33 @@
   </style>
 </head>
 <body>
-  <h1>Mystery in the Box</h1>
-
-  <ul>
-    <li><a onclick="playAudio('mansion.mp3')">Asesinato en la Mansión Cthulhu</a></li>
-    <li><a onclick="playAudio('lobos.mp3')">El cuento de los lobos crepusculares</a></li>
-    <li><a onclick="playAudio('bruja.mp3')">La bruja que se fue con el crepúsculo</a></li>
-    <li><a onclick="playAudio('luna.mp3')">Bajo la luna azul</a></li>
-    <li><a onclick="playAudio('muertos.mp3')">El misterio de los muertos vivientes</a></li>
-    <li><a onclick="playAudio('solsticio.mp3')">Solsticio oscuro</a></li>
   <div id="player-container">
     <audio id="audioPlayer" controls>
       <source id="audioSource" src="" type="audio/mpeg">
       Tu navegador no soporta el elemento de audio.
     </audio>
   </div>
+
+  <ul>
+  <h1>Mystery in the Box</h1>
+    <li><a onclick="playAudio('mansion.mp3')">Asesinato en la Mansión Cthulhu</a></li>
+    <li><a onclick="playAudio('lobos.mp3')">El cuento de los lobos crepusculares</a></li>
+    <li><a onclick="playAudio('bruja.mp3')">La bruja que se fue con el crepúsculo</a></li>
+    <li><a onclick="playAudio('luna.mp3')">Bajo la luna azul</a></li>
+    <li><a onclick="playAudio('muertos.mp3')">El misterio de los muertos vivientes</a></li>
+    <li><a onclick="playAudio('solsticio.mp3')">Solsticio oscuro</a></li>
+
+
+   <h1>Escape</h1>
+    <li><a onclick="playAudio('escape_maldición_templo_intro.mp3')">Escape - Introducción</a></li>
+    <li><a onclick="playAudio('escape4.mp3')">Escape - Curse of the Temple</a></li>
+    <li><a onclick="playAudio('escape_zombie_1.mp3')">Escape Zombie City (1)</a></li>
+    <li><a onclick="playAudio('escape_zombie_2.mp3')">Escape Zombie City (2)</a></li>
+
+   <h1>Zombie '15</h1>
+    <li><a onclick="playAudio('zombie15_normal.mp3')">Zombie 15 (Normal)</a></li>
+    <li><a onclick="playAudio('zombie15_dificil.mp3')">Zombie 15 (Difícil)</a></li>
+
    <h1>Cómo organizar un asesinato</h1>
     <li><a onclick="playAudio('1watersdown.mp3')">El caso de la mansión Watersdown</a></li>
     <li><a onclick="playAudio('2burbujas.mp3')">Burbujas de Frath</a></li>
@@ -73,11 +85,7 @@
     <li><a onclick="playAudio('5coppone.mp3')">El Regreso de "Hal" Coppone</a></li>
     <li><a onclick="playAudio('7promocion.mp3')">La promoción del '54</a></li>
     <li><a onclick="playAudio('8hollywood.mp3')">Estreno en Hollywood de Powar & Greede</a></li>
-
   </ul>
-
-
-
 
   <script>
     function playAudio(filename) {
